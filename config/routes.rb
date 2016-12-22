@@ -16,6 +16,19 @@ Rails.application.routes.draw do
       post 'like'
     end
   end
+  
+  resources :chefs, except: [:new]
+  
+  get '/register', to: 'chefs#new'
+  
+  #login -> new session
+  get '/login', to: 'logins#new'
+  #post login -> create session
+  post '/login', to: 'logins#create'
+  #logout -> close session  
+  get '/logout', to: 'logins#destroy'
+  
+  
   #get '/home', to: 'pages#home'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

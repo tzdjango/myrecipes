@@ -1,12 +1,40 @@
 <header class="navbar navbar-fixed-top navbar-default">
     <div class="container">
-      <%= link_to "myRecipes", root_path, class: "btn btn-lg btn-success", id: "logo" %>
+      <div class="nav_item">
+        <%= link_to "myRecipes", root_path, class: "btn btn-lg btn-success", id: "logo" %>
+      </div>
       
-      <%= link_to "link 1", "", class: "btn btn-default btn-warning", id: "nav_item" %>
-    
-      <%= link_to "link 2", "", class: "btn btn-default btn-warning", id: "nav_item" %>
-    
-      <%= link_to "New Recipe", new_recipe_path, class: "btn btn-default btn-warning", id: "nav_item" %>
-    
+      <div class="nav_item">
+        <%= link_to "link 1", "", class: "btn btn-default btn-warning", id: "nav_item" %>
+      </div>
+      
+      <div class="nav_item">
+        <%= link_to "link 2", "", class: "btn btn-default btn-warning", id: "nav_item" %>
+      </div>
+      <% if logged_in? %>
+        
+          <%= link_to "New Recipe", new_recipe_path, class: "btn btn-default btn-warning", id: "nav_item" %>
+  
+        <div class="nav_item">
+          <ul class="nav_item">
+            <li class="dropdown", id:"nav_item">
+              <%= link_to '#', class: "btn btn-default btn-danger dropdown-toggle", id:"nav_item", "data-toggle" => "dropdown" do %>
+                <%= current_user.chefname %> <b class="caret"></b>
+              <% end %>
+              <ul class="dropdown-menu">
+                <li><%= link_to "View Profile", chef_path(current_user) %></li>
+                <li><%= link_to "Edit Profile", edit_chef_path(current_user) %></li>
+                <li class="divider"></li>
+                <li><%= link_to "Log out", logout_path %></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      <% else %>
+        <div class="nav_item">
+          <%= link_to "Log in", login_path, class: "btn btn-default btn-success", id:"nav_item" %>
+        </div>
+      <% end %>        
+      
     </div>
 </header>
