@@ -15,7 +15,8 @@ class RecipesController < ApplicationController
     
     def create
         @recipe = Recipe.new(recipe_params)
-        @recipe.chef = Chef.find(2) #Hard coded chef to be replaced when we have authentication
+        #@recipe.chef = Chef.find(2) #Hard coded chef to be replaced when we have authentication
+        @recipe.chef = current_user
         
         if @recipe.save
             flash[:success] = "Your recipe was created successfully!"
