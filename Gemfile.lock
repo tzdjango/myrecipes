@@ -1,3 +1,15 @@
+GIT
+  remote: git://github.com/heroku/rails3_serve_static_assets.git
+  revision: 84910ceb4ca2851d650e66d3b22f5008acf253f8
+  specs:
+    rails3_serve_static_assets (0.0.1)
+
+GIT
+  remote: git://github.com/heroku/rails_log_stdout.git
+  revision: f9a92758f2d5dca5a88bf899a83256302f16ab6c
+  specs:
+    rails_log_stdout (0.0.1)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -27,9 +39,6 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.1)
       tzinfo (~> 1.1)
-    anjlab-bootstrap-rails (3.0.0.3)
-      railties (>= 3.0)
-      sass (>= 3.2)
     arel (5.0.1.20140414130214)
     autoprefixer-rails (6.6.0)
       execjs
@@ -171,7 +180,6 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  anjlab-bootstrap-rails (~> 3.0.0.3)
   bcrypt (= 3.1.7)
   bootstrap-sass (~> 3.3.1)
   bootstrap-will_paginate (= 0.0.10)
@@ -185,7 +193,9 @@ DEPENDENCIES
   pg
   pry
   rails (= 4.1.6)
+  rails3_serve_static_assets!
   rails_12factor
+  rails_log_stdout!
   sass-rails (~> 4.0.3)
   sdoc (~> 0.4.0)
   spring
