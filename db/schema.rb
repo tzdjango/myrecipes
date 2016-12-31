@@ -13,15 +13,15 @@
 
 ActiveRecord::Schema.define(version: 20161218143657) do
 
-  create_table "chefs", force: :cascade do |t|
-    t.string   "chefname"
-    t.string   "email"
+  create_table "chefs", force: true do |t|
+    t.string   "chefname",        limit: nil
+    t.string   "email",           limit: nil
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "password_digest"
+    t.string   "password_digest", limit: nil
   end
 
-  create_table "likes", force: :cascade do |t|
+  create_table "likes", force: true do |t|
     t.boolean  "like"
     t.integer  "chef_id"
     t.integer  "recipe_id"
@@ -29,14 +29,14 @@ ActiveRecord::Schema.define(version: 20161218143657) do
     t.datetime "updated_at"
   end
 
-  create_table "recipes", force: :cascade do |t|
-    t.string   "name"
+  create_table "recipes", force: true do |t|
+    t.string   "name",        limit: nil
     t.text     "summary"
     t.text     "description"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "chef_id"
-    t.string   "picture"
+    t.string   "picture",     limit: nil
   end
 
 end
