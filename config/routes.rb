@@ -28,6 +28,9 @@ Rails.application.routes.draw do
   #logout -> close session  
   get '/logout', to: 'logins#destroy'
   
+  resources :styles, only: [:new, :create, :show]
+  resources :ingredients, only: [:new, :create, :show]
+  
   
   #get '/home', to: 'pages#home'
   # The priority is based upon order of creation: first created -> highest priority.
